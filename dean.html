@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FCPC | Dean's Office</title>
+        <link rel="stylesheet" href="Assets/CSS/dean.css">
+        <script defer src="Assets/JS/dean.js"></script>
+    </head>
+    <body>
+        <!-- ============= LOADER ============= -->
+        <div id="loader">Loading...</div>
+
+        <!-- ============= BACK BUTTON ============= -->
+        <button class="back-btn" onclick="location.href='menu.html'">← Back</button>
+
+        <!-- ============= MAIN CONTENT ============= -->
+        <div class="container">
+
+            <!-- Appointment -->
+            <button class="tile" data-modal="appointModal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                    <circle cx="12" cy="12" r="8"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="12" x2="15" y2="15"/>
+                </svg>
+                <span>Book Appointment</span>
+            </button>
+        </div>
+
+        <!-- ============= MODAL ============= -->
+        <div class="modal" id="appointModal">
+            <div class="modal-box">
+                <h2>Book Appointment</h2>
+
+                <!-- Inputs -->
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+                <input type="tel" id="phoneInput" inputmode="numeric" maxlength="11" placeholder="Phone Number">
+
+                <!-- Select Office -->
+                <select>
+                    <option selected disabled>Select Office</option>
+                    <option>Dean of College of Accountancy</option>
+                    <option>Dean of College of Allied Medical Sciences</option>
+                    <option>Dean of College of Arts and Sciences</option>
+                    <option>Dean of College of Business Management</option>
+                    <option>Dean of College of Computer Studies</option>
+                    <option>Dean of College of Criminal Justice</option>
+                    <option>Dean of College of Education</option>
+                    <option>Dean of College of Engineering</option>
+                    <option>Student Discipline Office</option>
+                </select>
+                <input type="date" id="appointDate">
+
+                <!-- Select Time -->
+                <select>
+                    <option selected disabled>Select Time</option>
+                    <option>9:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>2:00 PM</option>
+                </select>
+                <button>Confirm Booking</button>
+                <button data-close>Cancel</button>
+            </div>
+        </div>
+    </body>
+</html>

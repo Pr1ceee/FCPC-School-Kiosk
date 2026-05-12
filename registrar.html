@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FCPC | Registrar</title>
+        <link rel="stylesheet" href="Assets/CSS/registrar.css">
+        <script defer src="Assets/JS/registrar.js"></script>
+    </head>
+    <body>
+
+        <!-- ============= LOADER ============= -->
+        <div id="loader">Loading...</div>
+
+        <!-- ============= BACK BUTTON ============= -->
+        <button class="back-btn" onclick="location.href='menu.html'">← Back</button>
+
+        <!-- ============= MAIN CONTENT ============= -->
+        <div class="container">
+            <div class="grid">
+
+                <!-- Documents -->
+                <button class="tile" data-modal="docModal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16"/>
+                        <line x1="8" y1="8" x2="16" y2="8"/>
+                        <line x1="8" y1="12" x2="16" y2="12"/>
+                    </svg>
+                    <span>Documents</span>
+                </button>
+
+                <!-- Status -->
+                <button class="tile" data-modal="statusModal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                        <line x1="4" y1="12" x2="20" y2="12"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <span>Status</span>
+                </button>
+
+                <!-- Clearance -->
+                <button class="tile" data-modal="clearModal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Clearance</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= MODALS ================= -->
+
+        <!-- Documents Modal -->
+        <div class="modal" id="docModal">
+            <div class="modal-box">
+                <h2>Request Document</h2>
+                <select>
+                    <option>Transcript of Records</option>
+                    <option>Certificate of Enrollment</option>
+                    <option>Good Moral</option>
+                </select>
+                <button>Submit Request</button>
+                <button data-close>Cancel</button>
+            </div>
+        </div>
+
+        <!-- Status Modal -->
+        <div class="modal" id="statusModal">
+            <div class="modal-box">
+                <h2>Enrollment Status</h2>
+                <select>
+                    <option>1st Semester</option>
+                    <option>2nd Semester</option>
+                </select>
+                <button>Check Status</button>
+                <button data-close>Close</button>
+            </div>
+        </div>
+
+        <!-- Clearance Modal -->
+        <div class="modal" id="clearModal">
+            <div class="modal-box">
+                <h2>Clearance</h2>
+                <select>
+                    <option>Midterm</option>
+                    <option>Final</option>
+                </select>
+                <button>View Clearance</button>
+                <button data-close>Close</button>
+            </div>
+        </div>
+    </body>
+</html>

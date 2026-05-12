@@ -1,0 +1,105 @@
+/* ================= GLOBAL STYLES ================= */
+
+/* Colors */
+:root {
+    --bg: #f8f8f8;
+    --blue: #7DFAFF;
+    --yellow: #FFFF00;
+    --pink: #fe93e8;
+    --darkpink: #ca6180;
+    --border: #000;
+}
+
+@font-face {
+    font-family: 'Reflow';
+    src: url('/Assets/Fonts/Reflow.ttf') format(truetype);
+    font-style: normal;
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Reflow', sans-serif;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+/* ================= BACKGROUND ANIMATION ================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+    animation: moveGrid 4s linear infinite;
+}
+
+@keyframes moveGrid {
+    from { background-position: 0 0; }
+    to { background-position: 40px 40px; }
+}
+
+/* ================= LOADER ================= */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 999;
+}
+
+#loader.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ================= HERO SECTION ================= */
+.hero img {
+    width: 180px;
+    border: 0px solid black;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+/* Start Button */
+.start-btn {
+    padding: 25px 60px;
+    font-size: 28px;
+    background: var(--blue);
+    font-family: 'Reflow', sans-serif;
+    border: 5px solid black;
+    box-shadow: 8px 8px 0 black;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.start-btn:hover {
+    transform: translate(-6px, -6px);
+    box-shadow: 10px 10px 0 var(--border);
+}

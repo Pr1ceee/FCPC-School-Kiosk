@@ -1,0 +1,134 @@
+@import url('menu.css');
+
+.tile {
+    aspect-ratio: 1 / 1;
+}
+
+/* Grid Overide */
+.grid {
+    align-items: center;
+    gap: 60px;
+}
+
+/* ================= MODALS ================= */
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.25s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/* Modal Box */
+.modal-box {
+    background: white;
+    border: 5px solid black;
+
+    padding: 35px;
+    width: 90%;
+    max-width: 480px;
+
+    box-shadow: 10px 10px 0 black;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    /* Animation */
+    transform: scale(0.7);
+    opacity: 0;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* Open Animation */
+.modal.active .modal-box {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ================= BUTTONS ================= */
+.modal-box button {
+    width: 100%;
+    padding: 14px;
+    border: 4px solid black;
+    background: var(--blue);
+    font-weight: bold;
+    font-family: 'Reflow', sans-serif;
+    cursor: pointer;
+
+    box-shadow: 6px 6px 0 black;
+    transition: 0.15s;
+}
+
+/* Hover Animation */
+.modal-box button:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 black;
+}
+
+/* Press Animation */
+.modal-box button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 black;
+}
+
+/* Cancel Button */
+.modal-box button[data-close] {
+    background: var(--pink);
+}
+
+/* ================= AMOUNT INPUT ================= */
+.modal-box input[type="number"] {
+    width: 100%;
+    padding: 14px;
+    border: 4px solid black;
+    background: var(--yellow);
+    font-weight: bold;
+
+    box-shadow: 5px 5px 0 black;
+    transition: 0.15s;
+}
+
+/* Hover Animation */
+.modal-box input[type="number"]:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 black;
+}
+
+/* Focus Animation */
+.modal-box input[type="number"]:focus {
+    outline: none;
+    transform: translate(-4px, -4px);
+    box-shadow: 9px 9px 0 black;
+}
+
+/* Active Animation */
+.modal-box input[type="number"]:active {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 black;
+}
+
+
+/* Spinner Removal */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
