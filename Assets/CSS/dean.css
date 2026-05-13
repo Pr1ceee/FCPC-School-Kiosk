@@ -260,29 +260,39 @@ select:focus {
 
     input[type="date"] {
         min-height: 55px;
-        -webkit-appearance: listbox; 
+        -webkit-appearance: listbox;
         appearance: listbox;
+        position: relative;
     }
 
+    /* Placeholder Text */
     input[type="date"]::before {
         content: attr(placeholder);
-        width: 100%;
+        margin-right: 0.5em;
         color: rgba(0,0,0,0.5);
     }
 
+    /* Hiding the placeholder text once a value is selected */
     input[type="date"]:focus::before,
     input[type="date"]:valid::before {
+        content: "";
         display: none;
     }
 
+    /* Custom Arrow for Mobile */
     input[type="date"]::-webkit-calendar-picker-indicator {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='3'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+        
+        width: 30px;
+        height: 30px;
         opacity: 1;
-        display: block;
-        background: transparent;
-        color: transparent;
-        cursor: pointer;
-        width: 25px;
-        height: 25px;
-        transform: scale(1.5);
     }
 }
