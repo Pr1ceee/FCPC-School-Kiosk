@@ -144,3 +144,24 @@ input {
     font-family: 'Reflow', sans-serif;
 }
 
+/* ================= MOBILE MODAL FIX ================= */
+
+@media (max-width: 768px) {
+    .modal-box {
+        width: 85%;
+        max-width: 320px;
+        padding: 22px;
+    }
+
+    .modal-box h2 {
+        font-size: 20px;
+    }
+
+    .modal-box button,
+    .modal-box input,
+    .modal-box select {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+

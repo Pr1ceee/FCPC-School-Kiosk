@@ -14,6 +14,7 @@
     font-family: 'Reflow';
     src: url('/Assets/Fonts/Reflow.ttf') format(truetype);
     font-style: normal;
+    overflow-x: hidden;
 }
 
 /* ================= RESET ================= */
@@ -102,4 +103,28 @@ body::before {
 .start-btn:hover {
     transform: translate(-6px, -6px);
     box-shadow: 10px 10px 0 var(--border);
+}
+
+/* ================= RESPONSIVE FIXES ================= */
+
+/* TABLETS */
+@media (max-width: 1024px) {
+    .hero {
+        transform: scale(0.9);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column !important;
+        transform: scale(0.8);
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+    .hero {
+        transform: scale(0.65);
+    }
 }

@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     width: 80%;
 }
+
 /* ================= TILES ================= */
 .tile {
     width: 300px;
@@ -76,4 +77,64 @@
     color: white;
     transform: translate(-6px, -6px) rotate(-4deg);
     box-shadow: 6px 6px 0 black;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .grid {
+        gap: 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column; 
+        gap: 18px;
+        width: 100%;
+        align-items: center; 
+    }
+
+    .tile {
+        width: 220px;
+        height: 220px;
+    }
+
+    .tile svg {
+        width: 50px;
+    }
+
+    .tile span {
+        font-size: 16px;
+    }
+
+    .back-btn {
+        font-size: 0;
+        padding: 14px 18px;
+    }
+
+    .back-btn::before {
+        content: "←";
+        font-size: 20px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .tile {
+        width: 180px;
+        height: 180px;
+        border-width: 4px;
+        box-shadow: 6px 6px 0 var(--border);
+    }
+
+    .tile svg {
+        width: 42px;
+    }
+
+    .tile span {
+        font-size: 14px;
+    }
 }
