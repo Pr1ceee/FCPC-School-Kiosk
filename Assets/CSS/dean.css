@@ -260,9 +260,29 @@ select:focus {
 
     input[type="date"] {
         min-height: 55px;
+        -webkit-appearance: listbox; 
+        appearance: listbox;
+    }
+
+    input[type="date"]::before {
+        content: attr(placeholder);
+        width: 100%;
+        color: rgba(0,0,0,0.5);
+    }
+
+    input[type="date"]:focus::before,
+    input[type="date"]:valid::before {
+        display: none;
     }
 
     input[type="date"]::-webkit-calendar-picker-indicator {
+        opacity: 1;
+        display: block;
+        background: transparent;
+        color: transparent;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
         transform: scale(1.5);
     }
 }
