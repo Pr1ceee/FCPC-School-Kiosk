@@ -240,6 +240,48 @@ select:focus {
 
 /* ================= MOBILE MODAL FIX ================= */
 
+@media screen and (max-width: 1024px) {
+    
+    input[type="date"] {
+        min-height: 55px !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    input[type="date"]:not(:focus):not(:valid)::before {
+        content: attr(placeholder);
+        position: absolute;
+        left: 14px;
+        color: rgba(0,0,0,0.5);
+        font-family: 'Reflow', sans-serif;
+        pointer-events: none;
+    }
+
+    /* Custom Arrow for Mobile */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        position: absolute;
+        right: 12px;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        height: 100%;
+        opacity: 1;
+        
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='3'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+        
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        color: transparent;
+    }
+}
+
 @media (max-width: 768px) {
     .modal-box {
         width: 85%;
